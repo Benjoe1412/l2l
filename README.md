@@ -28,3 +28,75 @@ Oktató webalkalmazás,
 - tanulók tudnak csatlakozni, hogy elvégezzék a tanfolyamot
 
 fullstack C# fejlesztés
+
+ DB                       Repository                       Service             MVC WebApp
++-----------------+      +-------------------------+      +-----------+       +-----------------------------------------+
+|                 |      |                         |      |           |       |                                         |
+|                 |      |                         |      |           |       | +---------+  +----------+ +-------+     |
+|                 +----->| +-------+               +----->|           +------>| |         |  |          | |       |     |
+|                 |      | |       |               |      |           |       | | View    |  |Controller| | View  |     |
+|                 |<-----+ |       |               |<-----+           |<------+ |         |  |          | |       |     |
+|                 |      | | EF    |               |      |           |       | | Model   |  |          | |       |     |
+|                 |      | |       |               |      |           |       | |         |  |          | |       |     |
+|                 |      | | Model |               |      |           |       | |         |  |          | |       |     |
+|                 |      | |       |               |      |           |       | |         |  |          | |       |     |
+|                 |      | |       |               |      |           |       | |         |  |          | |       |     |
+|                 |      | +-------+               |      |           |       | +---------+  +----------+ +-------+     |
+|                 |      |                         |      |           |       |                                         |
++-----------------+      +-------------------------+      +-----------+       +-----------------------------------------+
+Ha az EF modell mellet kiemeljük a szervezési feladatokat (legyen mondjuk *üzleti logika* a neve az olyan szakzsargon-pozitív, vagy **Service**), akkor már van olyan pont, ahol az API be tud kapcsolódni, és lehetőség szerint nem duplikálunk majd a megvalósításnál már eleve tervezett módon kilóméternyi kódokat.
+
+## OOD objektum orientált tervezés
+
+- **Csatolás *(Coupling)*:** ha egy elem függ más elemektől, akkor ezek az elemek csatolásban vannak
+- **gyenge *(low)*** ez a csatolás abban az esetben, ha a csatolásban lévő elemek esetén egy változás továbbterjedése megállítható.
+
+
+Első cél: **gyenge csatolás** elérése.
+
+
+- **kohézió *(cohesion)*:** egy elem felelősségeinek egymáshoz való kapcsolata
+- a kohézió **gyenge (*low*)**, ha az adott elemnek túl sok egymástól független felelőssége van
+- a kohézió **erős (*high*)**, ha az adott elem felelősségei erősen összefüggnek és nagyon koncentráltak
+
+Cél: **Erős kohézió** dobozon belül
+
+- költségek
+ - Erőforrástól
+ - Időtől
+ - élettartamtól
+
+## Feladatok, felelősségi körök
+
+### DB
+- legyen ef core támogatása
+    - adatbázis tervezés és telepítés
+- [docker container] támogatás
+- kezdetben sqlight, majd kibővítjük mssql-re
+
+- kockázatok
+    - teljesítmény
+    - relációs adatbázisok
+
+
+### Repository
+### Service
+### Web UI
+                                                              Web Browser
+ MVC WebApp                                                   +-------------------+
++-----------------------------------------+                   |                   |
+|                                         |                   |                   |
+| +---------+  +----------+ +-------+     |                   |                   |
+| |         |  |          | |       |     |                   |                   |
+| | View    |  |Controller| | View  |     |                   |                   |
+| |         |  |          | |       |     +------------------>|                   |
+| | Model   |  |          | |       |     |   http/https      |                   | <-------- User
+| |         |  |          | |       |     |<------------------+                   |
+| |         |  |          | |       |     |                   |                   |
+| |         |  |          | |       |     |                   |                   |
+| |         |  |          | |       |     |                   |                   |
+| +---------+  +----------+ +-------+     |                   |                   |
+|                                         |                   +-------------------+
++-----------------------------------------+
+
+- http kérés fogadása és válasz küldése
