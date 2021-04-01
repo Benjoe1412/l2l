@@ -100,3 +100,14 @@ Cél: **Erős kohézió** dobozon belül
 +-----------------------------------------+
 
 - http kérés fogadása és válasz küldése
+    MVC keretrendszer
+- felhasználó azonosítása
+    ASP.NET Core Identity
+- jogosultság kezelés
+    ASP.NET Core Identity
+- bejövő adatok validálása
+    MVC ViewModel
+
+- Kockázatok
+    - több alkalmazáson át elosztott bejelentkezés és jogosultságkezelés
+    Identity Server
