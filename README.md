@@ -28,7 +28,3 @@ Oktató webalkalmazás,
 - tanulók tudnak csatlakozni, hogy elvégezzék a tanfolyamot
 
 fullstack C# fejlesztés
-
-
-
-
