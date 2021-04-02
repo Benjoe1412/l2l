@@ -80,7 +80,23 @@ Cél: **Erős kohézió** dobozon belül
 
 
 ### Repository
+- CRUD műveleted elvégzése (**C**reate, **R**ead,**U**pdate, **D**elete)
+- Listázás (Szűrés, Sorbarendezés és lapozás)
+- offline adatokat szolgáltat
+  sosem ad vissza IQueryable példányt
+- adatmodell-eket szolgáltat
+- LINQ-t csak itt használunk
+
+- Kockázatok
+
 ### Service
+- transzformáció adatmodell és a viewmodell között (Data mapping)
+- Validálás a viewmodell képességeit meghaladóan
+- Minden amit eddig nem említettünk
+
+- Kockázatok
+
+
 ### Web UI
                                                               Web Browser
  MVC WebApp                                                   +-------------------+
@@ -111,3 +127,6 @@ Cél: **Erős kohézió** dobozon belül
 - Kockázatok
     - több alkalmazáson át elosztott bejelentkezés és jogosultságkezelés
     Identity Server
+## Továbbiak
+- docker containeres fejlesztési környezet
+- visual studio code
