@@ -130,3 +130,15 @@ Cél: **Erős kohézió** dobozon belül
 ## Továbbiak
 - docker containeres fejlesztési környezet
 - visual studio code
+
+## kódstruktúra
+
+Projektek:
+
+- l2l.Data
+    - l2l.Data
+    - l2l.Repository
+- l2l.WebUI
+    - l2l.Service
+    - l2l.WebUI
+
